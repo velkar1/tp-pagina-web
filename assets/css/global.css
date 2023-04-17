@@ -1,4 +1,5 @@
 @import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;600;800&display=swap');
 
 /* Paleta de colores
 
@@ -10,6 +11,10 @@
 
 /* Estructura de grilla de la pagina */
 
+*, h1, h2, h3, h4, h5, h6, p, a, li {
+  font-family: 'Figtree';
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -19,14 +24,24 @@
 
 /* Logo, barra de navegacion, menu */
 
-header {
-  background-color: chartreuse;
+div header {
+  /* border: 1px solid chartreuse; */
+  background: #a749e6;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  background-blend-mode: lighten;
   grid-column: span 4;
   grid-row: span 1;
   position: sticky;
   top: 0;
   display: flex;
   height: 10vh;
+  border-bottom: 3px solid rgba(241, 159, 255, 0.805);
+  border-radius: 0 0 2px 2px;
+  z-index: 5;
 }
 
 h1 {
@@ -34,8 +49,8 @@ h1 {
 }
 
 h1 img {
-  margin: 5%;
-  height: 80%;
+  margin: 10%;
+  height: auto;
   display: block;
 }
 
@@ -67,16 +82,17 @@ h1 img {
 .navegador-inicio a {
   text-decoration: none;
   color: black;
+  font-weight: 800;
 }
 
 .navegador-inicio a:hover {
-  color: rgb(0, 155, 198);
+  color: aliceblue;
 }
 
 .navegador-inicio a:hover {
   transition: 250ms;
-  text-shadow: 3px 1px 5px rgba(56, 52, 52, 0.522);
-  opacity: 0.7;
+  text-shadow: 3px 1px 5px rgba(184, 184, 184, 0.838);
+  /* opacity: 0.7; */
 }
 
 .navegador-inicio a:not(:hover) {
@@ -88,71 +104,39 @@ h1 img {
 /* Contenido principal */
 
 main {
-  background-color: brown;
+  /* border: 1px solid brown; */
   grid-column: span 4;
   grid-row: span 4;
   display: flex;
-}
-
-main .contenido {
-  height: fit-content;
-}
-
-.apartado {
-  background-color: aquamarine;
-  width: 25%;
-  height: inherit;
-}
-
-.contenido {
-  background-color: blueviolet;
-  width: 75%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 1fr);
-}
-
-.contenido > .seccion {
-  margin-top: 2%;
-}
-
-.seccion {
-  background-color: deeppink;
-  /* grid-column: span 1;
-  grid-row: span 1; */
-  width: 90%;
-  margin: auto;
-  border-radius: 20px;
-}
-
-/* .inicio, .nosotros, .servicios, .contacto {
-  grid-column: span 3;
-  grid-row: span 1;
-} */
-
-.seccion h3, p {
-  margin: 1%;
-}
-
-.lista-servicios {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.lista-servicios img {
-  height: 10vh;
-  margin: 10px;
-}
-
-.contacto form {
-  margin: 10px;
+  background: rgb(110, 56, 224);
+  background: linear-gradient(
+    0deg,
+    rgba(22, 10, 48, 1) 5%,
+    rgba(109, 56, 224, 0.818) 45%,
+    rgba(255, 0, 230, 0.696) 75%,
+    rgba(172, 73, 230, 0.621) 95%
+  );
 }
 
 /* Pie de pagina */
 
 footer {
-  background-color: blue;
+  color: aliceblue;
+  /* border: 1px solid blue; */
+  background-color: #160a30;
+  /* background-image: linear-gradient(to bottom, #bdbbbe 0%, #9d9ea3 100%),
+    radial-gradient(
+      88% 271%,
+      rgba(255, 255, 255, 0.25) 0%,
+      rgba(254, 254, 254, 0.25) 1%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    radial-gradient(
+      50% 100%,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    ); */
+  background-blend-mode: normal, lighten, soft-light;
   grid-column: span 4;
   grid-row: span 1;
   align-items: center;
@@ -162,15 +146,20 @@ footer {
 .lista-general-footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 90%;
-  margin: auto;
+  margin: 20px auto;
+}
+
+.lista-general-footer a {
+  text-decoration: none;
+  color: unset;
 }
 
 .lista-general-footer ul {
-  background-color: deepskyblue;
+  border: 1px solid deepskyblue;
 }
 
 .lista-individual-footer {
-  width: 20vw;
+  padding: 10px;
 }
